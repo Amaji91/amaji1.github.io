@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayobami Oye-Daniel</title>
+    <style>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+    </style>
+</head>
+<body>
+    <h1 data-testid="Ayobami Oye-Daniel">Ayobami Oye-Daniel</h1>
+    
+    <img src="amaji.jpg" alt="amaji" id="displayImage" data-testid="Displayimage">
+    
+    <p data-testid="currentDayOfTheWeek">Current Day of the Week: <span id="currentDay"></span></p>
+    
+    <p data-testid="currentWATTime">Current WAT Time: <span id="currentTime"></span></p>
+    
+    <p data-testid="myTrack">My Track: myTrack</p>
+    
+    <a href="https://github.com/apexontop1" data-testid="github.com/apexontop1" id="githubLink" target="_blank">GitHub Profile</a>
+
+    <script>
+        // JavaScript to set the current day and time
+        function updateDateTime() {
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const now = new Date();
+            const currentDayElement = document.getElementById("currentDay");
+            const currentTimeElement = document.getElementById("currentTime");
+            const currentDay = daysOfWeek[now.getDay()];
+            const currentTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            currentDayElement.textContent = currentDay;
+            currentTimeElement.textContent = currentTime;
+        }
+
+        // Update the date and time when the page loads
+        updateDateTime();
+
+        // Update the date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
