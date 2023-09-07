@@ -1,0 +1,1 @@
+# amaji1.github.io
